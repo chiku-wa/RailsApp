@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleDiary</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%  # Add ヘッダー %>
+    <header>
+      ヘッダー
+      <hr />
+    </header>
+
+    <% # ここにビューが埋め込まれて表示される %>
+    <%= yield %>
+
+    <%  # Add フッター %>
+    <footer>
+      <hr />
+      フッター
+    </footer>
+  </body>
+</html>
