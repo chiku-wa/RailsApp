@@ -1,0 +1,29 @@
+<h1>日記一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        タイトル
+      </th>
+      <th>
+        内容
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% #インスタンス変数を繰り返し表示 %>
+    <% @diaries.each do |diary| %>
+      <tr>
+        <td><%= diary.title %></td>
+        <td><%= diary.body %></td>
+        <td><%= link_to 'Show', diary %></td>
+        <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
+        <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
