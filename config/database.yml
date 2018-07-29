@@ -13,14 +13,13 @@ default: &default
   # Add
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  database: rails_dev
-  user: rails_user
-  password:
   pool: 5
 
 development:
   <<: *default
+  database: rails_dev
+  user: rails_user
+  password:
   # Mod comment out
   # database: db/development.sqlite3
 
@@ -34,5 +33,6 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   # Mod comment out
   # database: db/production.sqlite3
