@@ -17,9 +17,9 @@
       <tr>
         <td><%= diary.title %></td>
         <td><%= diary.body %></td>
-        <td><%= link_to 'Show', diary %></td>
-        <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-        <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        <td><%= link_to '詳細', diary_path(diary.id) %></td>
+        <td><%= link_to '編集', edit_diary_path(diary.id) %></td>
+        <td><%= link_to '削除', diary, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
         <td></td>
         <td></td>
         <td></td>
