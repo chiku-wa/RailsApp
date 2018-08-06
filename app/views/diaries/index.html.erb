@@ -1,13 +1,25 @@
 <h1>日記一覧</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
+      <th>
+        ID
+      </th>
       <th>
         タイトル
       </th>
       <th>
-        内容
+        作成日時
+      </th>
+      <th>
+        更新日時
+      </th>
+      <th>
+        編集
+      </th>
+      <th>
+        削除
       </th>
     </tr>
   </thead>
@@ -15,14 +27,12 @@
     <% #インスタンス変数を繰り返し表示 %>
     <% @diaries.each do |diary| %>
       <tr>
-        <td><%= diary.title %></td>
-        <td><%= diary.body %></td>
-        <td><%= link_to '詳細', diary_path(diary.id) %></td>
+        <td><%= diary.id %></td>
+        <td><%= link_to diary.title, diary_path(diary.id) %></td>
+        <td><%= diary.created_at %></td>
+        <td><%= diary.updated_at %></td>
         <td><%= link_to '編集', edit_diary_path(diary.id) %></td>
         <td><%= link_to '削除', diary, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tr>
     <% end %>
   </tbody>
