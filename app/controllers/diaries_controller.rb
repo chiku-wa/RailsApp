@@ -12,6 +12,15 @@ class DiariesController < ApplicationController
   def show
   end
 
+  # Add destroy action
+  def destroy
+    @diary.destroy
+
+    # 「@diary」は暗黙的にindexへ遷移させる事を指す
+    # noticeは、indexビューのnotice変数にメッセージを表示させるためのもの
+    redirect_to( @diary, notice: '削除しました。')
+  end
+
   # Add set method
   private def set_diary
     @diary = Diary.find(params[:id])

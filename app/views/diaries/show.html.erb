@@ -1,9 +1,27 @@
 <table border = "1">
   <tr>
+    <th>ID</th>
+    <td><%= @diary.id %></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
     <td><%= @diary.title %></td>
+  </tr>
+  <tr>
+    <th>本文</th>
     <td><%= @diary.body %></td>
+  </tr>
+  <tr>
+    <th>作成日時</th>
+    <td><%= @diary.created_at %></td>
+  </tr>
+  <tr>
+    <th>更新日時</th>
+    <td><%= @diary.updated_at %></td>
   </tr>
 </table>
 
 <%= link_to "編集", edit_diary_path(@diary.id) %>
+<%= link_to "削除", @diary, method: :delete, data: {confirm: '本当に削除してよろしいですか？'} %>
+
 <%= link_to '戻る', action: :index %>
