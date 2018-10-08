@@ -1,0 +1,34 @@
+<%= form_with(model: diary, local: true) do |form| %>
+
+  <% #Fix me add diary.errors.any? %>
+  <% #エラーメッセージ出力部分 %>
+  <% if diary.errors.any? %>
+    <div id="error_explain">
+      <h2><%= pluralize(diary.errors.count, "error") %>日記が登録できません。</h2>
+      <ul>
+        <% diary.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%
+  # ここから下は、Diaryモデルのカラムを指す
+  # form.label　→　項目名
+  # form.text_area,　form.text_area　→　フォーム(入力欄)
+%>
+<div class="field">
+  <%= form.label :title %>
+  <%= form.text_field :title, id: :diary_title %>
+</div>
+
+<div class="field">
+  <%= form.label :body %>
+  <%= form.text_area :body, id: :diary_body %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
