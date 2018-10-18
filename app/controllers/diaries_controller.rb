@@ -28,9 +28,11 @@ class DiariesController < ApplicationController
     # format.json　→　jsonの場合
     respond_to do |format|
       if @diary.save
+        # 保存に成功したときの処理
         format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
         format.json { render :show, status: :created, location: @diary }
       else
+        # 保存に失敗したときの処理
         format.html { rebnder :new }
         format.json { render json: @diary.errors, status: :unprocessable_entry }
       end
@@ -46,6 +48,11 @@ class DiariesController < ApplicationController
     redirect_to( @diary, notice: '削除しました。')
   end
 
+  # Add edit action
+  def edit
+  end
+
+  #=========== Private Method ===========
   # Add set method
   private def set_diary
     @diary = Diary.find(params[:id])

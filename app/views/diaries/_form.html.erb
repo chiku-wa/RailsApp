@@ -28,6 +28,10 @@
   <%= form.text_area :body, id: :diary_body %>
 </div>
 
+<%
+  #送信ボタン。ボタン名は、呼び出すViewによって動的に変わる。
+  #インスタンスを受け取った場合は「Update」、受け取らなかった場合は「Create」
+ %>
 <div class="actions">
   <%= form.submit %>
 </div>
