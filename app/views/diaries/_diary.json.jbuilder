@@ -1,2 +1,3 @@
+# json.extract! <モデルオブジェクト> カラム1, カラム2, カラム3...
 json.extract! diary, :id, :title, :body, :created_at, :updated_at
 json.url diary_url(diary, format: :json)
