@@ -52,6 +52,19 @@ class DiariesController < ApplicationController
   def edit
   end
 
+  # Add update action
+  def update
+    respond_to do |format|
+      if @diary.update(diary_params)
+        format.html { redirect_to @diary, notice: '更新に失敗しました。' }
+        format.json { render :show, status: :ok, location: @diary }
+      else
+        format.html { render :edit }
+        format.json { rebder json: @diary.errors, status: unprocessable_entity }
+      end
+    end
+  end
+
   #=========== Private Method ===========
   # Add set method
   private def set_diary
