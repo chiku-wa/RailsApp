@@ -18,5 +18,12 @@ module SampleDiary
 
     # Add タイムゾーンを東京に設定
     config.time_zone = 'Tokyo'
+
+    # デフォルトではi18nのメッセージを日本語化
+    config.i18n.default_locale = :ja
+    # 日本語と英語の両方を有効化する
+    config.i18n.available_locales = [:ja, :en]
+    # localesフォルダ直下だけでなく、配下のサブフォルダも参照する
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
   end
 end

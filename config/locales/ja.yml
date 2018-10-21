@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      diary: 日記
+    attributes:
+      diary:
+        title: "タイトル"
+        body: "本文"
+    errors:
+      format: '%{attributes}%{message}'
+      messages:
+        blank: を入力してください #Validationの「presensce」に対応するエラーメッセージ

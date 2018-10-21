@@ -33,7 +33,7 @@ class DiariesController < ApplicationController
         format.json { render :show, status: :created, location: @diary }
       else
         # 保存に失敗したときの処理
-        format.html { rebnder :new }
+        format.html { render :new }
         format.json { render json: @diary.errors, status: :unprocessable_entry }
       end
     end
