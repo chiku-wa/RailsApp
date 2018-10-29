@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class DiariesController < ApplicationController
 
   # Add before_action
@@ -15,6 +17,10 @@ class DiariesController < ApplicationController
 
   # Add show action
   def show
+  end
+
+  # Sample action
+  def sample
   end
 
   # Add create action
