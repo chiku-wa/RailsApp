@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%# モバイル用に表示するための %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
@@ -37,7 +40,7 @@
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">アプリについて</h4>
               <p class="text-muted">
-                Railsの勉強も兼ねて作成した日記アプリです。Scaffoldは使わず、一から手作りモットーに作成しました
+                Railsの勉強も兼ねて作成した日記アプリです。Scaffoldは使わず、一から手作りをモットーに作成しました。
               </p>
             </div>
             <%# 右側の領域 %>
@@ -55,12 +58,21 @@
     </header>
 
     <% # ここにビューが埋め込まれて表示される %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
     <%  # Add フッター %>
-    <footer>
-      <hr />
-      フッター
+    <footer class="p-3 mb-3 bg-light rounded text-center">
+      <p>
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </p>
+      <p>
+        <a href="https://twitter.com/chikuwa04473892">@chiku-wa</a>created this homepage for study.
+      </p>
+      <p>
+        <%= link_to 'TOPに戻る', diaries_path %>
+      </p>
     </footer>
   </body>
 </html>
