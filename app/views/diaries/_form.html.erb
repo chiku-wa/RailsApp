@@ -19,8 +19,7 @@
   # form.text_area,　form.text_area　→　フォーム(入力欄)
 %>
 <div class="field">
-  <%= form.label :title %>
-  <%= form.text_field :title, id: :diary_title %>
+  <%= form.text_field :title, id: :diary_title, class: "form-control", placeholder: :title %>
 </div>
 
 <div class="field">
