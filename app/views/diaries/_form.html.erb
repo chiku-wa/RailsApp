@@ -13,25 +13,27 @@
     </div>
   <% end %>
 
-<%
-  # ここから下は、Diaryモデルのカラムを指す
-  # form.label　→　項目名
-  # form.text_area,　form.text_area　→　フォーム(入力欄)
-%>
-<div class="field">
-  <%= form.text_field :title, id: :diary_title, class: "form-control", placeholder: :title %>
-</div>
+  <%
+    # ここから下は、Diaryモデルのカラムを指す
+    # form.label　→　項目名
+    # form.text_area,　form.text_area　→　フォーム(入力欄)
+  %>
+  <div class="form-group">
+    <label for="title">タイトル</label>
+    <%= form.text_field :title, id: :diary_title, class: "form-control", placeholder: :title %>
+  </div>
 
-<div class="field">
-  <%= form.label :body %>
-  <%= form.text_area :body, id: :diary_body %>
-</div>
+  <div class="form-group">
+    <label for="body">本文</label>
+    <%= form.text_area :body, id: :diary_body, class: "form-control", placeholder: :body %>
+  </div>
 
-<%
-  #送信ボタン。ボタン名は、呼び出すViewによって動的に変わる。
-  #インスタンスを受け取った場合は「Update」、受け取らなかった場合は「Create」
- %>
-<div class="actions">
-  <%= form.submit %>
-</div>
+  <%
+    #送信ボタン。ボタン名は、呼び出すViewによって動的に変わる。
+    #インスタンスを受け取った場合は「Update」、受け取らなかった場合は「Create」
+  %>
+  <div class="actions">
+    <%= form.submit "登録", class: "btn btn-primary" %>
+    <%= link_to "キャンセル", diaries_path %>
+  </div>
 <% end %>
