@@ -7,7 +7,7 @@ class DiariesController < ApplicationController
 
   # Add index action
   def index
-    @diaries = Diary.order(:updated_at)
+    @diaries = Diary.order(updated_at: "DESC")
   end
 
   # Add new action
