@@ -16,7 +16,7 @@
 
 // ----------
 // 既存のBootstrapの上書き設定
-.card-body {
+.card-body-ellipsis {
   // 文字があれた場合は、あふれた文字を非表示にする
   overflow:hidden;
   text-overflow:ellipsis;
