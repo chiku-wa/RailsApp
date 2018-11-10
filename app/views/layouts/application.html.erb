@@ -21,9 +21,10 @@
 
       <%# 常に表示されているメニューバー %>
         <div class="container d-flex">
-          <a href="#" class="navbar-brand d-flex align-items-left">
-            <h1>日記アプリ</h1>
-          </a>
+          <div class="text-white text-left">
+            <%= link_to (image_tag 'icon_016810_256.jpg', width: 30, height: 30), {action: :index} %>
+            <strong>ダイアリー</strong>
+          </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

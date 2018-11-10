@@ -1,38 +1,40 @@
-<%= form_with(model: diary, local: true) do |form| %>
+<p>
+  <%= form_with(model: diary, local: true) do |form| %>
 
-  <% #Fix me add diary.errors.any? %>
-  <% #エラーメッセージ出力部分 %>
-  <% if diary.errors.any? %>
-    <div id="error_explain">
-      <ul>
-        <% diary.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% #Fix me add diary.errors.any? %>
+    <% #エラーメッセージ出力部分 %>
+    <% if diary.errors.any? %>
+      <div id="error_explain">
+        <ul>
+          <% diary.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <form>
+      <%
+        # ここから下は、Diaryモデルのカラムを指す
+        # form.label　→　項目名
+        # form.text_area,　form.text_area　→　フォーム(入力欄)
+      %>
+      <div class="form-group">
+        <label for="title">タイトル</label>
+        <%= form.text_field :title, id: :diary_title, class: "form-control", placeholder: :title %>
+      </div>
+
+      <div class="form-group">
+        <label for="body">本文</label>
+        <%= form.text_area :body, id: :diary_body, class: "form-control", placeholder: :body %>
+      </div>
+
+      <%
+        #送信ボタン。ボタン名は、呼び出すViewによって動的に変わる。
+        #インスタンスを受け取った場合は「Update」、受け取らなかった場合は「Create」
+      %>
+      <%= form.submit "登録", class: "btn btn-primary" %>
+      <%= link_to "キャンセル", diaries_path %>
+    </form>
   <% end %>
-
-  <form>
-    <%
-      # ここから下は、Diaryモデルのカラムを指す
-      # form.label　→　項目名
-      # form.text_area,　form.text_area　→　フォーム(入力欄)
-    %>
-    <div class="form-group">
-      <label for="title">タイトル</label>
-      <%= form.text_field :title, id: :diary_title, class: "form-control", placeholder: :title %>
-    </div>
-
-    <div class="form-group">
-      <label for="body">本文</label>
-      <%= form.text_area :body, id: :diary_body, class: "form-control", placeholder: :body %>
-    </div>
-
-    <%
-      #送信ボタン。ボタン名は、呼び出すViewによって動的に変わる。
-      #インスタンスを受け取った場合は「Update」、受け取らなかった場合は「Create」
-    %>
-    <%= form.submit "登録", class: "btn btn-primary" %>
-    <%= link_to "キャンセル", diaries_path %>
-  </form>
-<% end %>
+</p>
