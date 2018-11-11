@@ -17,9 +17,9 @@ default: &default
 
 development:
   <<: *default
-  database: rails_dev
-  user: rails_user
-  password:
+  database: <%= ENV['DATABASE'] %>
+  user: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   # Mod comment out
   # database: db/development.sqlite3
 
