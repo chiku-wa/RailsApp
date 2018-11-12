@@ -10,8 +10,12 @@ gem 'rails', '~> 5.2.0'
 # Mod comment out
 # gem 'sqlite3'
 
-# Add
+# PostgreSQL
 gem 'pg'
+
+# 認証機能、及び権限管理
+gem 'devise'
+gem 'cancancan'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
