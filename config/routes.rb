@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   # Mod Comment out
   # get "/users/new" #, to "users#new"
 
-  get '/', to: "diaries#index"
+  # deviseで使用するrootディレクトリ
+  root 'diaries#index'
+
+  #get '/', to: "diaries#index"
 
   # Add diary routing
   resources :diaries

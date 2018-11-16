@@ -15,7 +15,6 @@
   <body>
     <header>
       <%# Bootstrapヘッダ %>
-
       <%# ベースとなるナビゲーションバー %>
       <div class="navbar navbar-dark bg-dark box-shadow">
 
@@ -58,6 +57,10 @@
 
     <% # ここにビューが埋め込まれて表示される %>
     <div class="container">
+      <%# devise用のflashメッセージ領域 %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </div>
 
