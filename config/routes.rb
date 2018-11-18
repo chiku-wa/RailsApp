@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # deviseで使用するrootディレクトリ
   root 'diaries#index'
 
-  #get '/', to: "diaries#index"
+  # get '/', to: "diaries#index"
 
   # Add diary routing
   resources :diaries
