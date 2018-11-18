@@ -28,7 +28,10 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-
+        <%# deviseのログアウトボタン %>
+        <% if user_signed_in? %>
+          <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-secondary my-2" %></p>
+        <% end %>
       </div>
 
       <%# アコーディオンボタン押下時に表示される領域 %>
@@ -51,7 +54,7 @@
                   class="text-white" style="">こちら</a></li>
               </ul>
             </div>
-          </div>…
+          </div>
         </div>
       </div>
 
