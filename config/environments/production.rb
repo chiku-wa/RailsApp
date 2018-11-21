@@ -16,7 +16,8 @@ Rails.application.configure do
 
   # =====deviseプラグインの設定
   # デフォルトURL設定
-  config.action_mailer.default_url_options = {host: "localhost", port: 80}
+  # [fixme]ホスト名を動的に取得するようにする
+  config.action_mailer.default_url_options = {host: "railsapplication.herokuapp.com", port: 80}
 
   # SMTPサーバ設定
   config.action_mailer.smtp_settings = {
