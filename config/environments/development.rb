@@ -32,17 +32,20 @@ Rails.application.configure do
 
   # =====deviseプラグインの設定
   # デフォルトURL設定
-  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+  config.action_mailer.default_url_options = {
+    host: "localhost",
+    port: 3000,
+  }
 
   # SMTPサーバ設定
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => ENV["SMTP_DOMAIN"],
-    :port => ENV["SMTP_PORT"],
-    :domain => ENV["SMTP_DOMAIN"],
-    :user_name => ENV["SMTP_USER_NAME"],
-    :password => ENV["SMTP_PASSWORD"],
-    :authentication => "login",
+    :address              => ENV["SMTP_DOMAIN"],
+    :port                 => ENV["SMTP_PORT"],
+    :domain               => ENV["SMTP_DOMAIN"],
+    :user_name            => ENV["SMTP_USER_NAME"],
+    :password             => ENV["SMTP_PASSWORD"],
+    :authentication       => "login",
   }
 
   # Don't care if the mailer can't send.

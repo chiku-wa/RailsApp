@@ -17,17 +17,20 @@ Rails.application.configure do
   # =====deviseプラグインの設定
   # デフォルトURL設定
   # [fixme]ホスト名を動的に取得するようにする
-  config.action_mailer.default_url_options = {host: "railsapplication.herokuapp.com", port: 80}
+  config.action_mailer.default_url_options = {
+    host: "railsapplication.herokuapp.com",
+    port: 80,
+  }
 
   # SMTPサーバ設定
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => ENV["SMTP_DOMAIN"],
-    :port => ENV["SMTP_PORT"],
-    :domain => ENV["SMTP_DOMAIN"],
-    :user_name => ENV["SMTP_USER_NAME"],
-    :password => ENV["SMTP_PASSWORD"],
-    :authentication => "login",
+    :address              => ENV["SMTP_DOMAIN"],
+    :port                 => ENV["SMTP_PORT"],
+    :domain               => ENV["SMTP_DOMAIN"],
+    :user_name            => ENV["SMTP_USER_NAME"],
+    :password             => ENV["SMTP_PASSWORD"],
+    :authentication       => "login",
   }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
