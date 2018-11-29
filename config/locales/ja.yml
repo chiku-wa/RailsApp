@@ -2,10 +2,15 @@ ja:
   activerecord:
     models:
       diary: 日記
+      user: ユーザ
     attributes:
       diary:
         title: "タイトル"
         body: "本文"
+      user:
+        email: Eメールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
     errors:
       format: '%{attributes}%{message}'
       messages:
