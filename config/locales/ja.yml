@@ -11,6 +11,7 @@ ja:
         email: Eメールアドレス
         password: パスワード
         password_confirmation: パスワード(確認)
+        remember_me: ログイン状態を記憶する
     errors:
       format: '%{attributes}%{message}'
       messages:
