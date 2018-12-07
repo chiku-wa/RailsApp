@@ -42,7 +42,7 @@
             <p>
               <div class="text-white">
                 <%= link_to "ログイン", new_user_session_path, method: :get, class: "btn btn-primary" %>
-                初めてご利用の方はこちら
+                初めてご利用の方は<%= link_to "こちら", new_user_registration_path %>
               </div>
             </p>
           <% end %>
