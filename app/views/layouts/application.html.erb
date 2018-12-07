@@ -21,13 +21,13 @@
       <%# 常に表示されているメニューバー %>
         <div class="container d-flex">
           <div class="text-white text-left">
-            <%= link_to (image_tag 'icon_016810_256.jpg', width: 30, height: 30), diaries_path %>
-            <strong>ダイアリー</strong>
+            <h3>
+              <%= link_to (image_tag 'icon_016810_256.jpg', width: 50, height: 50), diaries_path %>The simple diary
+            </h3>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-        </div>
 
           <%#
             ログイン済み  :ログアウトボタンを表示と、ログインユーザの情報を表示
@@ -39,8 +39,14 @@
             </div>
             <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %></p>
           <% else %>
-            <p><%= link_to "ログイン", new_user_session_path, method: :get, class: "btn btn-primary" %></p>
+            <p>
+              <div class="text-white">
+                <%= link_to "ログイン", new_user_session_path, method: :get, class: "btn btn-primary" %>
+                初めてご利用の方はこちら
+              </div>
+            </p>
           <% end %>
+        </div>
 
       </div>
 
