@@ -40,7 +40,7 @@ class RegistrationTest < Devise::IntegrationTest
 
   test 'a guest admin should not see a warning about minimum password length' do
     get new_admin_session_path
-    assert_not_contain 'characters minimum'
+    assert_not_contain '文字以上'
   end
 
   def user_sign_up
@@ -56,7 +56,7 @@ class RegistrationTest < Devise::IntegrationTest
 
   test 'a guest user should see a warning about minimum password length' do
     get new_user_registration_path
-    assert_contain '7 characters minimum'
+    assert_contain '7 文字以上'
   end
 
   test 'a guest user should be able to sign up successfully and be blocked by confirmation' do
@@ -221,11 +221,11 @@ class RegistrationTest < Devise::IntegrationTest
     assert_contain "Password confirmation doesn't match Password"
     refute User.to_adapter.find_first.valid_password?('pas123')
   end
-  
+
   test 'a signed in user should see a warning about minimum password length' do
     sign_in_as_user
     get edit_user_registration_path
-    assert_contain 'characters minimum'
+    assert_contain '文字以上'
   end
 
   test 'a signed in user should be able to cancel their account' do
