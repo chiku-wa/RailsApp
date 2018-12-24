@@ -10,7 +10,10 @@
   </div>
 </div>
 
-<%= link_to '編集', edit_diary_path(@diary.id), class: "btn btn-sm btn-outline-info" %>
-<%= link_to '削除', @diary, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: '削除してよろしいですか？' } %>
+<% #ログイン済みなら、編集／削除ボタンを表示 %>
+<% if user_signed_in? %>
+  <%= link_to '編集', edit_diary_path(@diary.id), class: "btn btn-sm btn-outline-info" %>
+  <%= link_to '削除', @diary, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: '削除してよろしいですか？' } %>
+<% end %>
 
 <p><%= link_to 'キャンセル', action: :index %></p>
